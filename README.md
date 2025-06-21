@@ -20,20 +20,35 @@ This project is designed to study interaction patterns between AI and human acto
 ## System Components
 
 - **Edge Device**: Raspberry Pi with camera module
-- **Cloud Infrastructure**: AWS S3, Lambda, DynamoDB, SNS
+- **Cloud Infrastructure**: AWS S3, Lambda, DynamoDB, EventBridge
 - **AI Analysis**: Amazon Bedrock Nova Pro foundation model
-- **Communication**: SNS notifications and API Gateway
-
-## Getting Started
-
-1. Set up the Raspberry Pi with the camera module
-2. Deploy the AWS infrastructure using the provided templates
-3. Configure the edge device to capture and upload images
-4. Set up notification preferences for the gardener
+- **Communication**: Web interface for asynchronous interaction
 
 ## Architecture
 
-For detailed information about the system architecture, please see [architecture.md](architecture.md).
+The system uses a cloud-based architecture with edge devices for data collection:
+
+![AWS Architecture Diagram](research_proposal/aws_architecture_diagram.png)
+
+For detailed information about the system architecture, please see:
+- [architecture.md](architecture.md) - Detailed architecture description
+- [architecture_diagram.md](architecture_diagram.md) - Mermaid-based architecture diagram
+- [aws_architecture_diagram.md](aws_architecture_diagram.md) - AWS architecture diagram using official service icons
+
+## Research Proposal
+
+This project is part of a research initiative to study long-timescale agentic systems. The full research proposal is available in:
+- [Markdown format](research_proposal/research_proposal.md)
+- [PDF format](research_proposal/latex/output/research_proposal.pdf)
+
+## Implementation Plan
+
+The project follows an Agile approach with four phases:
+
+1. **Technical Proof of Concept** (3 months): Single plant monitoring system
+2. **Pattern Exploration** (4 months): Multiple plants managed by a single AI
+3. **Comparative Models** (5 months): Testing multiple AI approaches with parallel plant environments
+4. **Synthesis and Theory Development** (2 months): Analysis and framework development
 
 ## Project Status
 
@@ -41,4 +56,4 @@ This project is currently in experimental phase.
 
 ## License
 
-[Specify your license here]
+This project is licensed under the Apache 2.0 open source license.

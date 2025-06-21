@@ -1,0 +1,378 @@
+\documentclass[12pt,letterpaper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref} % Added back with hidelinks option to keep URLs but hide colored links
+
+% Configure headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Garden AI Research Proposal}
+\lhead{David Rostcheck}
+\cfoot{\thepage}
+
+% Title formatting
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Document begins
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Huge\bfseries Research Proposal:\\Investigating Interaction Patterns in Long-Timescale Agentic Systems\par}
+    \vspace{1.5cm}
+    {\Large Principal Investigator: David Rostcheck\par}
+    {\large david@rostcheck.com\par}
+    \vspace{1cm}
+    {\large Independent Researcher\par}
+    \vspace{0.5cm}
+    {\large June 13, 2025\par}
+    \vfill
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\newpage
+
+% Main content
+\section{Introduction}
+
+The field of artificial intelligence has made remarkable strides in developing systems capable of sophisticated knowledge representation, reasoning, and task execution. However, a significant limitation persists in current AI architectures: their inability to effectively operate over extended timescales while maintaining goal-directed behavior and meaningful human collaboration. This research proposes to investigate the patterns of interaction that emerge in agentic systems designed to operate over prolonged periods (days, weeks, or months) through the development and analysis of an experimental plant monitoring system called Garden AI.
+
+\section{Background and Significance}
+
+\subsection{The Cognitive Light Cone}
+
+All cognitive actors operate within what biologist Michael Levin terms a ``cognitive light cone'' - the scope of the largest goal they can engage with based on their substrate, input/output mechanisms, and operational timescale \cite{levin2019}. Current AI systems typically operate within a narrow cognitive light cone constrained by:
+
+\begin{enumerate}
+    \item Short-term interaction patterns (chat-based turns)
+    \item Limited tool access (primarily informational)
+    \item Inability to maintain context and goal orientation across extended periods
+    \item Lack of mechanisms for asynchronous human collaboration
+    \item Limited practices within AI agent teams for effectively doing collaborative work together
+\end{enumerate}
+
+These constraints fundamentally limit the domains in which AI systems can effectively operate, restricting them to problems that can be solved within short timeframes and with immediate human guidance.
+
+\subsection{The Knowledge-Goal Gap}
+
+A critical distinction exists between systems designed for knowledge management (explaining, summarizing, analyzing) and those capable of pursuing overarching goals that require knowledge acquisition, reasoning, and action as components of execution. Current systems excel at the former but struggle with the latter, particularly when goals require sustained attention over longer periods.
+
+\subsection{Timescale as a Critical Dimension}
+
+Time represents a crucial dimension in cognitive systems that has been underexplored in AI research. The ability to incorporate new information, adjust strategies, and maintain goal orientation across varying timescales is essential for addressing complex problems. Natural processes like plant growth operate on timescales that are slow by computational standards but rapid enough to observe meaningful patterns within a research timeframe, making them ideal for studying long-timescale agent behavior.
+
+\section{Research Questions}
+
+This research aims to address the following questions:
+
+\begin{enumerate}
+    \item What interaction patterns emerge between AI agents and human collaborators when operating over extended timescales?
+    \item How do these patterns differ from those observed in short-term, synchronous interactions?
+    \item What architectural components are necessary to support effective long-timescale agentic behavior?
+    \item How does the agent's ability to store and retrieve historical context affect its decision-making and goal pursuit?
+    \item What mechanisms facilitate effective asynchronous collaboration between humans and AI systems?
+\end{enumerate}
+
+\subsection{Limitations}
+
+The behavior of multi-agent systems at extended timescales represents a significant problem that is not yet studied, but will not be reached in this research. Operating at these timescales may require different approaches than commonly used in current AI agent engineering, which implicitly assumes shorter timescales due to the turn-based nature of chat interactions, which is the default training mode for most current models.
+
+\section{Methodology}
+
+\subsection{Experimental System: Garden AI}
+
+We propose developing Garden AI, an experimental plant monitoring system that combines edge computing with cloud infrastructure and AI to provide automated plant care assistance. The system will evolve through iterative development, beginning with a single-plant proof of concept and potentially expanding to multiple comparative models.
+
+\subsubsection{Initial Proof of Concept}
+\begin{enumerate}
+    \item Capture regular images of a single plant at scheduled intervals (1-2 times daily)
+    \item Analyze plant health using the Amazon Bedrock Nova Pro foundation model
+    \item Maintain historical records of plant development and AI observations
+    \item Communicate asynchronously with human gardeners through a web interface
+    \item Track all interactions, decisions, and outcomes over the plant's growth cycle
+\end{enumerate}
+
+\subsubsection{Potential Expansion (based on initial findings)}
+\begin{enumerate}
+    \item Deploy multiple instances monitoring identical plant species in similar conditions
+    \item Implement variations in AI models or interaction patterns to compare approaches
+    \item Introduce controlled challenges (e.g., simulated pest infestations) to observe response patterns
+    \item Explore different communication cadences and interaction styles
+\end{enumerate}
+
+\subsection{System Architecture}
+
+The Garden AI system will be implemented using the following components:
+
+\begin{itemize}
+    \item \textbf{Edge Device}: Raspberry Pi with camera module for image capture
+    \item \textbf{Cloud Infrastructure}: AWS services including S3, Lambda, DynamoDB, EventBridge
+    \item \textbf{AI Analysis}: Amazon Bedrock Nova Pro foundation model
+    \item \textbf{Communication}: Web application interface for asynchronous interaction
+    \item \textbf{Data Storage}: NoSQL database for plant status, AI summaries, and message history
+\end{itemize}
+
+\subsection{Data Collection}
+
+The research will collect the following data:
+
+\begin{enumerate}
+    \item \textbf{Temporal Interaction Patterns}: Frequency, duration, and nature of AI-human interactions
+    \item \textbf{Decision Quality}: Accuracy and effectiveness of AI recommendations over time
+    \item \textbf{Context Utilization}: How effectively the AI leverages historical information
+    \item \textbf{Goal Alignment}: Consistency of AI actions with the overarching goal of plant health
+    \item \textbf{Adaptation Patterns}: How the AI adjusts strategies based on plant response and human feedback
+\end{enumerate}
+
+\subsection{Analysis Methods}
+
+Data will be analyzed using:
+
+\begin{enumerate}
+    \item Temporal pattern analysis to identify interaction rhythms and cycles
+    \item Qualitative coding of AI-human communications to identify emerging patterns
+    \item Comparative analysis between short-term and long-term decision quality
+    \item Evaluation of goal persistence and drift over extended periods
+    \item In later phases, evaluation of plant health and agricultural yield
+\end{enumerate}
+
+\section{Expected Outcomes and Contributions}
+
+This research is expected to yield the following contributions:
+
+\begin{enumerate}
+    \item \textbf{Architectural Insights}: Identification of essential components for long-timescale agentic systems
+    \item \textbf{Interaction Patterns}: Documentation of novel interaction patterns that emerge in asynchronous, extended collaborations
+    \item \textbf{Design Principles}: Guidelines for designing AI systems capable of operating effectively across varying timescales
+    \item \textbf{Domain Expansion}: Framework for expanding the cognitive light cone of AI systems to address problems requiring extended temporal engagement
+    \item \textbf{Practical Applications}: Demonstration of a functional system that can maintain goal-directed behavior while accommodating the natural rhythm of biological processes
+\end{enumerate}
+
+\section{Theoretical Framework}
+
+The research will draw upon several theoretical frameworks:
+
+\subsection{Cognitive Light Cone Theory}
+
+Building on Michael Levin's concept, we will explore how expanding an agent's temporal domain affects its problem-solving capabilities and interaction patterns.
+
+\subsection{Extended Agency}
+
+Drawing from theories of extended cognition, we will investigate how an agent's capabilities are enhanced through persistent storage of observations and plans \cite{clark1998, jiang2025}.
+
+\subsection{Asynchronous Collaboration Models}
+
+Examining how effective collaboration can occur when participants operate on different timescales and with different availability patterns \cite{krishnan2025}.
+
+\section{Implementation Plan: Agile Research Approach}
+
+Rather than following a traditional waterfall research methodology, this project will adopt an Agile approach with iterative development cycles and continuous learning. This approach is particularly well-suited for exploring emergent phenomena in complex systems where requirements and insights evolve throughout the research process.
+
+\subsection{Phase 1: Technical Proof of Concept (3 months)}
+\begin{itemize}
+    \item \textbf{Goal}: Establish technical foundation and explore basic interaction patterns
+    \item \textbf{Activities}:
+    \begin{itemize}
+        \item Develop minimal viable system with a single plant
+        \item Implement core infrastructure (image capture, AI analysis, communication)
+        \item Document emergent issues and interaction patterns
+        \item Weekly review and adaptation cycles
+    \end{itemize}
+    \item \textbf{Deliverables}: Working prototype, technical documentation, preliminary observations report
+\end{itemize}
+
+\subsection{Phase 2: Pattern Exploration (4 months)}
+\begin{itemize}
+    \item \textbf{Goal}: Refine system based on Phase 1 learnings and explore deeper interaction patterns
+    \item \textbf{Activities}:
+    \begin{itemize}
+        \item Implement improvements based on Phase 1 findings
+        \item Extend scope by adding additional plants and supporting IoT camera hardware for a single AI to manage (expect $\sim$5 plants per gardener)
+        \item Extend observation period to capture longer-term patterns
+        \item Begin comparative analysis of interaction types
+        \item Bi-weekly research sprints with defined objectives
+    \end{itemize}
+    \item \textbf{Deliverables}: Refined system, initial pattern catalog, mid-project research report
+\end{itemize}
+
+\subsection{Phase 3: Comparative Models (5 months)}
+\begin{itemize}
+    \item \textbf{Goal}: Test multiple AI approaches with parallel plant environments
+    \item \textbf{Activities}:
+    \begin{itemize}
+        \item Deploy multiple instances of the system with different plants in similar conditions
+        \item Introduce heterogeneous plants, exploring the AI's ability to manage a more complex ecosystems
+        \item Implement variations in AI models or interaction patterns
+        \item Compare responses to similar challenges (e.g., pest infestations, nutrient deficiencies)
+        \item Monthly research reviews and direction adjustments
+    \end{itemize}
+    \item \textbf{Deliverables}: Comparative analysis report, model effectiveness evaluation
+\end{itemize}
+
+\subsection{Phase 4: Synthesis and Theory Development (2 months)}
+\begin{itemize}
+    \item \textbf{Goal}: Synthesize findings and develop theoretical framework
+    \item \textbf{Activities}:
+    \begin{itemize}
+        \item Comprehensive analysis of all collected data
+        \item Development of design principles for long-timescale agentic systems
+        \item Formulation of testable hypotheses for future research
+        \item Final research review and documentation
+    \end{itemize}
+    \item \textbf{Deliverables}: Final research report, design principles guide, academic publication drafts
+\end{itemize}
+
+Each phase will include regular retrospectives to assess progress, identify emerging insights, and adjust subsequent activities accordingly. This Agile approach allows the research to respond to unexpected findings and evolve as our understanding of long-timescale agent interactions deepens.
+
+\section{Broader Impacts}
+
+This research has potential implications for numerous domains requiring long-term goal pursuit, including:
+
+\begin{enumerate}
+    \item \textbf{Scientific Research}: Supporting extended experimental processes
+    \item \textbf{Healthcare}: Monitoring chronic conditions and treatment adherence
+    \item \textbf{Education}: Providing sustained learning support across academic terms
+    \item \textbf{Environmental Monitoring}: Tracking ecological changes over seasons or years
+    \item \textbf{Project Management}: Assisting with complex projects spanning months or years
+\end{enumerate}
+
+\section{Budget}
+
+The budget for this research project is structured to align with the Agile, phased approach. Each phase builds upon previous work and expands the scope incrementally, with corresponding resource requirements.
+
+\subsection{Phase 1: Technical Proof of Concept (3 months)}
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Item} & \textbf{Monthly Cost} & \textbf{Total (3 months)} & \textbf{Notes} \\
+\midrule
+AWS Services & \$75 & \$225 & S3 storage, Lambda functions, DynamoDB, Bedrock API usage \\
+Seeds and Gardening Supplies & \$50 & \$50 & One-time purchase of basic supplies \\
+Miscellaneous & \$25 & \$75 & Cables, adapters, etc. \\
+\midrule
+\textbf{Phase 1 Total} & & \textbf{\$350} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textit{Note: Phase 1 utilizes existing Raspberry Pi hardware and camera equipment.}
+
+\subsection{Phase 2: Pattern Exploration (4 months)}
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Item} & \textbf{Monthly Cost} & \textbf{Total (4 months)} & \textbf{Notes} \\
+\midrule
+AWS Services & \$125 & \$500 & Increased usage for multiple plants \\
+Raspberry Pi Units (4) & - & \$280 & \$70 each, one-time purchase \\
+Camera Modules (4) & - & \$120 & \$30 each, one-time purchase \\
+Additional Plant Lights & - & \$150 & One-time purchase \\
+Soil, Pots, and Gardening Supplies & - & \$200 & For additional plants \\
+Miscellaneous & \$50 & \$200 & Cables, adapters, sensors, etc. \\
+\midrule
+\textbf{Phase 2 Total} & & \textbf{\$1,450} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Phase 3: Comparative Models (5 months)}
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Item} & \textbf{Monthly Cost} & \textbf{Total (5 months)} & \textbf{Notes} \\
+\midrule
+AWS Services & \$200 & \$1,000 & Multiple AI instances, increased storage and processing \\
+Growing Racks & - & \$350 & Shelving systems for organized plant arrangement \\
+Additional Plant Lights & - & \$300 & For expanded growing area \\
+Video Monitoring Equipment & - & \$400 & Higher quality cameras, monitoring stations \\
+Environmental Sensors & - & \$250 & Temperature, humidity, soil moisture sensors \\
+Gardening Supplies & - & \$300 & Specialized soil, nutrients, pest management \\
+Miscellaneous & \$100 & \$500 & Cables, adapters, backup equipment, etc. \\
+\midrule
+\textbf{Phase 3 Total} & & \textbf{\$3,100} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Phase 4: Synthesis and Theory Development (2 months)}
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Item} & \textbf{Monthly Cost} & \textbf{Total (2 months)} & \textbf{Notes} \\
+\midrule
+AWS Services & \$150 & \$300 & Continued operation during analysis phase \\
+Data Analysis Software & - & \$100 & Specialized software licenses if needed \\
+Publication Preparation & - & \$200 & Graphics, formatting, submission fees \\
+\midrule
+\textbf{Phase 4 Total} & & \textbf{\$600} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Total Project Budget}
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Phase} & \textbf{Duration} & \textbf{Total Cost} \\
+\midrule
+Phase 1: Technical Proof of Concept & 3 months & \$350 \\
+Phase 2: Pattern Exploration & 4 months & \$1,450 \\
+Phase 3: Comparative Models & 5 months & \$3,100 \\
+Phase 4: Synthesis and Theory Development & 2 months & \$600 \\
+\midrule
+\textbf{Total Project Budget} & \textbf{14 months} & \textbf{\$5,500} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textit{Note: This budget does not include labor costs. All equipment will be retained for future research after project completion.}
+
+\section{Conclusion}
+
+The proposed research addresses a fundamental limitation in current AI systems: their inability to effectively operate over extended timescales while maintaining goal-directed behavior. By developing and studying Garden AI through an iterative, Agile approach, we aim to identify the architectural components, interaction patterns, and design principles necessary to expand the temporal domain of AI systems, enabling them to address problems that require sustained attention and adaptation over longer periods.
+
+This work represents a shift from viewing AI primarily as a tool for immediate knowledge management to understanding it as a potential collaborator in extended goal pursuit - a transition that may significantly expand the range of problems AI can meaningfully address. By starting with a focused proof of concept and allowing our research direction to evolve based on emergent findings, we create space for discovering unexpected patterns and insights that might be missed in a more rigid research framework.
+
+The Agile methodology employed in this research mirrors the adaptive nature we hope to foster in long-timescale AI systems themselves - responding to changing conditions, incorporating new information, and maintaining goal orientation despite evolving circumstances.
+
+\section{Licensing}
+
+Code artifacts developed under this proposal will be licensed under the Apache 2.0 Open Source license and freely distributed on GitHub. Resulting research papers will be published in open preprint form to the extent allowed by publishers' licenses. Final publications, if accepted to academic journals, may be restricted in access and require journal subscription. Data will be made freely available on GitHub.
+
+\section{AI Disclosure}
+
+This proposal was written by the Principal Investigator using Amazon Q Developer (6/13/25) operating on the PI's notes and the system architecture documents, with subsequent hand editing.
+
+\section{AI Safety}
+
+The agentic AI system proposed in this research does not have direct agency over the world; its action is limited to sending messages to a human gardener, who carries out requests. Limiting the AI to indirect agency and a limited domain (gardening) reduces safety concerns to a minimum \cite{osogami2025}. The gardener is assumed to be familiar with and to utilize basic agricultural safety protocols in conducting gardening activities.
+
+% References
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
